@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+body{
+    margin: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 header{
     background-color: #0084fd;
     height: 100%;
@@ -24,7 +31,7 @@ header{
 }
 
 .width{
-    max-width: 295px;
+    max-width: 90%;
     margin: 0 auto;
 }
 
@@ -111,29 +118,58 @@ header{
     font-size: larger;
 }
 
-/* desktop */
-@media  screen and (min-width: 1200px) {
+.justify-between{
+    justify-content: space-between;
+    display: flex;
+}
+
+@media screen and (min-width: 780px){
+
     .width{
-        max-width: 1000px;
+        max-width: 90%;
+        margin: 0 auto;
     }
 
     .demo .row{
+        margin: 55px;
         gap: 10px;
         justify-content: space-between;
     }
 
     .demo .col-66{
+        margin: 0;
         width: calc((100% / 3) * 2 - 10px);
     }
 
     .demo .col-33{
+        margin: 0;
+        width: calc(100% / 3 - 10px);
+    }
+}
+
+/* desktop */
+@media  screen and (min-width: 1200px) {
+    .width{
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .demo .row{
+        margin-top: 55px;
+        gap: 10px;
+        justify-content: space-between;
+    }
+
+    .demo .col-66{
+        margin: 0;
+        width: calc((100% / 3) * 2 - 10px);
+    }
+
+    .demo .col-33{
+        margin: 0;
         width: calc(100% / 3 - 10px);
     }
 
-    .demo .col-33:first-child{
-        margin-top: 55px;
-    }
-
     .demo .col-66 .content{
         display: flex;
     }
@@ -142,12 +178,18 @@ header{
         display: flex;
     }
 
-    .demo .col-66 .content .div-66{
+    .demo .div-66{
         width: calc((100% / 3) * 2);
+        min-height: 298px;
     }
 
-    .demo .col-66 .content .div-33{
+    .demo .div-33{
         width: calc(100% / 3);
-        align-items: end;
+        height: 100%;
+        align-self: end;
+    }
+
+    .demo .icon{
+        font-size: 70px;
     }
 }
